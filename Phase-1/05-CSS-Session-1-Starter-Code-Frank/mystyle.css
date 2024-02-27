@@ -1,0 +1,21 @@
+/* make the background color  my favorite color */
+nav { /* this is the universal selector */
+    /* universal selector says ALL elements in the html should be style */
+    background-color: yellow;
+}
+table {
+    color: green; /* sets text color to green */
+}
+#sportsQuestion { /* styles the element id="sportsQuestion" */
+    color: lightpink;
+}
+div { /* style all divs */
+    font-size: 20px;
+    color: blue;
+    text-align: center;
+}
+.namefield { /* styles this class of element with class="namefield" */
+    font-size: 30px;
+    color: orange;
+    text-align: left;
+}

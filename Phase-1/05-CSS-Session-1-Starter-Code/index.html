@@ -107,17 +107,23 @@
     <!-- the div tag allows us to group elements for styling or spacing -->
     <!-- Each div element starts on a new line by default               -->
     <div>
-        <label for="fnamefield">FIrst Name:</label>
+        <label for="fnamefield">FIrst Name &euro; :</label>
         <input type="text" id="fnamefield" name="fname"/>
     
     <div>
         <label for="lnamefield">Last Name:</label>
         <input type="text" id="lnamefield" name="lname"/>
     </div>
+    <!-- type="date" generates a basic date picker on the page-->
     <div>
         <label for="bdate"> Birth Date:</label>
         <input type="date" id="bdate" name="birthDate">
     </div>
+    <!-- the select tag creats dropdown list-->
+    <!-- the name="" on the select tag is the name of the variable to hold data-->
+    <!-- the option tags within the select tag provide the chices-->
+    <!-- the value="" in the option tag is what gets stored for the chioce -->
+    <!-- -->
     <div>
         <label for=""foodfield>Cuisine Preference:</label>
         <select name="FoodPrefs" id="foodfield">
@@ -137,6 +143,8 @@
         <label for="email-address">What's your email adddress:</label>
         <input type="text" id="email-address" name="email"/>
         <br>
+        <!-- the type="radio" lets only one choice -->
+        <!-- use the same "name="radio-button-name"" for same group to be mutually exclusive-->
         May we contact you?
             <input type="radio" id="emailyesfield"   name="email-preference" value="yes"/>
             <label for="emailyesfield">Sure</label>
@@ -145,6 +153,10 @@
     </div>
 
     <div>
+
+
+
+        <!-- checkbox is multiple selections enabled-->
         <p>Do you like any sports?</p>
         <input type="checkbox" id="football" name="preferredSport" value="Football">
         <label for="football">American Football</label>
@@ -167,8 +179,15 @@
         <input type="checkbox" id="other" name="preferredSports" value="some-other-sport">
         <label for="other">Other Sport</label>
     </div>
+
+
+
+
     <div>
-        <br>    
+        <br>
+        <!-- type="submit" generates a submit button-->
+        <!-- submit btn send data from form to URL specified (continuned next line) -->
+        <!-- in the action="" attribute on the form tag POST method URL-->
         <input type="submit" value="Click to Submit"/> 
     </div>
 </form>

@@ -17,6 +17,7 @@
 
     <!-- Embedded CSS (styling) in document   -->
     <!-- Note: It is part of the head element -->
+    <!-- due to the cascading nature of css: Interanal overrides external-->
     <style>
         /* this is a comment CSS (styling) */
         table { /* Apply these styles to all table elements */
@@ -35,6 +36,8 @@
              background-color: linen;
          }
       </style> <!-- End of embedded CSS (styling) for the document -->
+      <!-- next line links this to exteral style sheet-->
+      <link rel="stylesheet" href="./style.css"/>
 </head>
 <body> <!-- What is displayed in the viewport for the user to see -->
     <nav> <!-- identifies the navigation for the application    -->
@@ -106,11 +109,11 @@
 
     <!-- the div tag allows us to group elements for styling or spacing -->
     <!-- Each div element starts on a new line by default               -->
-    <div>
+    <div class="namefield"> <!-- assigning this dif to a class/group for styling-->
         <label for="fnamefield">FIrst Name:</label>
         <input type="text" id="fnamefield" name="fname"/>
     
-    <div>
+    <div class="namefield"> <!-- assigning this dif to a class/group for styling-->
         <label for="lnamefield">Last Name:</label>
         <input type="text" id="lnamefield" name="lname"/>
     </div>
@@ -144,7 +147,7 @@
             <label for="emailyesfield">No Way!!!</label>
     </div>
 
-    <div>
+    <div id="sportsQuestion"> <!-- gives this div a name for styling-->
         <p>Do you like any sports?</p>
         <input type="checkbox" id="football" name="preferredSport" value="Football">
         <label for="football">American Football</label>
