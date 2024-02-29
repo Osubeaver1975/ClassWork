@@ -10,11 +10,13 @@
 // Call functions defined below to execute them  
 //********************************************************************************************
 
-variables();
+variables();    // call the function called  'vairables'() to execute its code
 
+// call the "printParameters"() function with various types of params
 printParameters('Yoda', "Obi-Wan")
 printParameters()
 printParameters("Vito Corleone")
+printParameters(1, 12345)
 
 // the /n character causes the display to go to a new line (used for output line spacing)
 
@@ -27,8 +29,18 @@ equality('two', 'too')
 console.log('\n ----- compare a whole number value 1 to a decimal value 1 -----\n')
 equality(1, 1.0);   
 
+console.log('\n ----- call falsy with various values -----\n')
+
+falsy("frank")
+falsy(42)
+falsy(42 / "frank")  // returns NaN Not a Number
+falsy(42 / 0)         // value is infinity --> TRUE becanse infinity is not 0
+falsy(null)           // null is empty
+falsy(3.14)
+
 console.log('\n\nThanks for using our app!\n' )
 
+objects() //call the objects Function
 //********************************************************************************************
 // End of main application processing
 //********************************************************************************************
@@ -40,28 +52,66 @@ console.log('\n\nThanks for using our app!\n' )
  * Illustrate various variable definition options in JavaScript
  */
 function variables() {
+  // name() - function call
+  // word.name() - method call
+  //
+  // A method is a function associated with and object
+  // an object is a group of javaScript variables
+  //
   // console.log() is the JavaScript version of System.out.println() in Java
   // If what you want to display using console.log() contains a variable:
   //
   //      1. Enclose what you want to display in back-ticks (`)
   //      2. Put the variable you want displayed inside ${}
   //
-  console.log('-'.repeat(50));
-  console.log('variable definition demo')
-  console.log('-'.repeat(50));
+  console.log('-'.repeat(50));             // this displays 50 dashes on the screen
+  console.log('variable definition demo')  // display the words between () on screen
+  console.log('-'.repeat(50));             // this displays 50 dashes on the screen
 
-  // Declare a variable where the value cannot be changed
-  
 
+  // Declare a variable where the value cannot be changed A.K.A. a constant
+  const DAYS_IN_FEBRUARY = 29;
+  //const indicates it cannot be changed
+
+  // display the value in the variable "dayInFebruary"
+  console.log(`The value in DAYS_IN_FEBRUARY is: ${DAYS_IN_FEBRUARY}` )
 
   // Declares a variable those value can be changed
  
+  
 
   // Declares a variable that will always be an array
   // To declare an array in JavaScript code name = []
-
+//
+// Tere are two ways to declare a variable
+// 
+// let variableName;  - safer and less prone to errors
+// var variableName;  - less safe and error prone
+//
+//
+  let daysInYear = 366
+  console.log('There are ${daysInYear} in 2024');
 
 }
+
+function variables() {
+  let monthsOfYear = ["January",
+                      "February",
+                      "March",
+                      "April",
+                      "May",
+                      "June",
+                      "July",
+                      "August",
+                      "Spetember",
+                      "October",
+                      "November",
+                      "December"
+                    ]
+console.log (`${monthsOfYear}`)
+console.table(monthsOfYear) //Prints in a table
+
+}   
 
 /**
  * Functions can also accept parameters.
@@ -149,7 +199,14 @@ function objects() {
 
   // Define an object
 
+let contactInfo = {   //define an object called contact
+                    firstName: "Frank",
+                    lastName : "Fella",
+                    city : "Phoenix"
+}
   // Log the entire  object
+  console.log(contactInfo)
+  console.table(contactInfo)
 
   // Log individual elements/properties of  the object
  
@@ -157,7 +214,8 @@ function objects() {
   
   // Define a method to be used with an object
 
-}
+  }
+
 
 /*
 ########################
