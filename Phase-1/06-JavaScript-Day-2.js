@@ -1,5 +1,5 @@
 /*
-    Example of a multi-line comment just like in CSS/C#/Java
+    Example of a multi-line comment just like in C#/Java
 */
 
 // Single line comment just like C#/Java
@@ -10,15 +10,30 @@
 // Call functions defined below to execute them  
 //********************************************************************************************
 
-variables();  // Call the function called variables() to execute its code
+variables();    // call the function called  'vairables'() to execute its code
 
-// Call the printParameters function with various types of parameters
+// call the "printParameters"() function with various types of params
 printParameters('Yoda', "Obi-Wan")
 printParameters()
 printParameters("Vito Corleone")
 printParameters(1, 12345)
 
 // the /n character causes the display to go to a new line (used for output line spacing)
+
+// - console is a keyword defined by JS to represent the screen
+// .log is a method defined in the console objects (method is function associated with an object)
+// Object Oriented Programming means we use objects to do our bidding
+
+// Object )riented programming we code: objectName.methodName(parameters)
+//
+
+
+
+
+
+
+
+
 
 console.log('\n----- compare a string value 1 to a numeric value 1 -----\n')
 equality('1',1)  
@@ -33,16 +48,59 @@ console.log('\n ----- call falsy with various values -----\n')
 
 falsy("frank")
 falsy(42)
-falsy(42 / "frank")  // value sent is Nan - false
-falsy(42 / 0)        // value sent is infinity - true
-falsy(null)
+falsy(42 / "frank")  // returns NaN Not a Number
+falsy(42 / 0)         // value is infinity --> TRUE becanse infinity is not 0
+falsy(null)           // null is empty
 falsy(3.14)
-
-console.log('\n ----- call objects -----\n')
-objects() // call the objects function
 
 console.log('\n\nThanks for using our app!\n' )
 
+
+// define an array of numbers
+let numbers = [10,30,14.2, -76, 1776, 1.98]
+
+// process each element in the array
+//  1. Display each element with its position in the array
+//  2. Determine the sum of all numbers in the array
+//  3. Determine the avg of all elements in array
+//  4. Display the sum and the average after all elements have been processed
+
+// Define the variable to hold the sum of the elements
+let sum = 0;
+
+
+for(let i=0; i < numbers.length; i++) {
+  console.log(`Element #${i} is: ${numbers[i]}`)
+  sum = sum + numbers[i]  // add the current element value to the sum
+                          // sum += numbers[i] <-- that is the same result
+}
+// we cannot determine the avg until all elements have been processed
+
+let avg = sum / numbers.length 
+
+console.log(`The sum is: ${sum} and the average is: ${avg}`)
+// We calculate the avg after the for-loop is complete
+// Alternative for-loop
+//
+// for(elementName of arrayName) - loop thru the entire arrary 
+// - giving each element the elementName n the loop body to reference the
+// - the current element
+//
+// process each element in the array
+//  1. Display each element with its position in the array
+//  2. Determine the sum of all numbers in the array
+//  3. Determine the avg of all elements in array
+//  4. Display the sum and the average after all elements have been processed
+// set sum = 0 to be able to reuse it
+sum =0;
+for(aNumber of numbers) {
+  console.log(`an element is: ${aNumber}`)
+  sum = sum + aNumber
+}
+console.log(`The sum is: ${sum} and the average is: ${avg}`)
+
+
+objects() //call the objects Function
 //********************************************************************************************
 // End of main application processing
 //********************************************************************************************
@@ -57,49 +115,46 @@ function variables() {
   // name() - function call
   // word.name() - method call
   //
-  // a method is function associated with an object
-  //   an object a group of JavaScript variables
+  // A method is a function associated with and object
+  // an object is a group of javaScript variables
   //
   // console.log() is the JavaScript version of System.out.println() in Java
-  // 
   // If what you want to display using console.log() contains a variable:
   //
   //      1. Enclose what you want to display in back-ticks (`)
   //      2. Put the variable you want displayed inside ${}
   //
-  console.log('-'.repeat(50));             // display 50 '-' on the screen
-  console.log('variable definition demo')  // display the words betweeb the ()
-  console.log('-'.repeat(50));             // display 50 '-' on the screen
+  console.log('-'.repeat(50));             // this displays 50 dashes on the screen
+  console.log('variable definition demo')  // display the words between () on screen
+  console.log('-'.repeat(50));             // this displays 50 dashes on the screen
 
-  // Declare a variable where the value cannot be changed (a constant)
-  // By convention, constant names are all UPPERCASE with '_'
-  const DAYS_IN_FEBRUARY = 29;  // const indicates a variable that cannot be changed
 
-  // Display the value in the variable daysInFebruary
-  console.log(`The value in daysInFebruary is: ${DAYS_IN_FEBRUARY}`)
+  // Declare a variable where the value cannot be changed A.K.A. a constant
+  const DAYS_IN_FEBRUARY = 29;
+  //const indicates it cannot be changed
 
-  // try to change the value in the constant - generate a runtime error
-  // DAYS_IN_FEBRUARY = 28
+  // display the value in the variable "dayInFebruary"
+  console.log(`The value in DAYS_IN_FEBRUARY is: ${DAYS_IN_FEBRUARY}` )
 
   // Declares a variable those value can be changed
-  //
-  // There are two ways to define variables
-  //
-  //    let variableName;   - safer and less prone to errors
-  //    var variableName;   - less safe and can lead to errors 
-  //                          or hard to understand code
-  //
-  //    let is the preferred way to define variables in modern JavaScript
-  //
-  let daysInYear = 366  // 2024 is a leap year
-  console.log(`There are ${daysInYear} in 2024`);
-
-  daysInYear = 365; // change the value in a variable
-  console.log(`There are ${daysInYear} in 2025`);
  
+  
+
   // Declares a variable that will always be an array
   // To declare an array in JavaScript code name = []
+//
+// Tere are two ways to declare a variable
+// 
+// let variableName;  - safer and less prone to errors
+// var variableName;  - less safe and error prone
+//
+//
+  let daysInYear = 366
+  console.log('There are ${daysInYear} in 2024');
 
+}
+
+function variables() {
   let monthsOfYear = ["January",
                       "February",
                       "March",
@@ -108,17 +163,15 @@ function variables() {
                       "June",
                       "July",
                       "August",
-                      "September",
+                      "Spetember",
                       "October",
                       "November",
                       "December"
                     ]
-   console.log(`${monthsOfYear}`)
-   console.table(monthsOfYear)    // Display an array in table format - note no `` or ${}
+console.log (`${monthsOfYear}`)
+console.table(monthsOfYear) //Prints in a table
 
-
-
-}  // end of the variables() function
+}   
 
 /**
  * Functions can also accept parameters.
@@ -126,7 +179,7 @@ function variables() {
  * 
  *  JavaDoc is a standard way of documenting code.
  *  JavaDoc is comments placed before a function to describe it
- *  annotations in JavDoc to de // falsescribes parts of a function
+ *  @words - annotations in JavDoc to describes parts of a function
  * 
  *  @param - identifies parameters passed to the function in JavaDoc notation
  * 
@@ -149,7 +202,7 @@ function printParameters(param1, param2) {
  * ==  is loose equality  - ignores the type of data - only looks at value
  * === is strict equality - requires both the type and value be the same
  * 
- * 1 ==  '1' - true  - values represents the value one
+ * 1 ==  '1' - true  - values represents teh value one
  * 1 === '1' - false - types don't match (Number and String)
  * 
  * @param {Object} x
@@ -159,8 +212,8 @@ function equality(x, y) {
   console.log(`x is ${typeof x}`);  // typeof returns the type of the value it is given
   console.log(`y is ${typeof y}`);
 
-  console.log(`x == y : ${x == y}`);  // Note: use of expression (x==y) in the console.log
-  console.log(`x === y : ${x === y}`);
+  console.log(`x == y : ${x == y}`); // true
+  console.log(`x === y : ${x === y}`); // false
 }
 
 /**
@@ -204,15 +257,30 @@ function objects() {
   console.log('objects() to demostrate Javascript objects')
   console.log('-'.repeat(50));
 
-  // Define an object
-  let contactInfo  = {  // define an object called contact
-                      firstName : "Frank",
-                      lastName  : "Fella",
-                      city: "Phoenix"
-                     }
+  // Define an object - a group of key/value pairs key :value
 
+let contactInfo = {   //define an object called contact
+                    firstName: "Frank",
+                    lastName : "Fella",
+                    city : "Phoenix",
+                    favorites: [    // start of array
+                      {  //element in the array
+                        sport: "football",
+                        favoirteTeam: "Packers"
+
+                      },  //marks end of element
+                      {
+                        sport: "hockey",
+                        favoirteTeam: "Chicago Blackhawks"
+                      },
+                      {
+                        sport: "baseball",
+                        favoirteTeam: "New York Yankees"
+                      }
+                    ]  // marks end of array in this object
+}
   // Log the entire  object
-  console.log(contactInfo)  // because it is a group of values, no `` and no ${}
+  console.log(contactInfo)
   console.table(contactInfo)
 
   // Log individual elements/properties of  the object
@@ -221,7 +289,8 @@ function objects() {
   
   // Define a method to be used with an object
 
-}
+  }
+
 
 /*
 ########################

@@ -20,6 +20,21 @@ printParameters(1, 12345)
 
 // the /n character causes the display to go to a new line (used for output line spacing)
 
+// - console is a keyword defined by JS to represent the screen
+// .log is a method defined in the console objects (method is function associated with an object)
+// Object Oriented Programming means we use objects to do our bidding
+
+// Object )riented programming we code: objectName.methodName(parameters)
+//
+
+
+
+
+
+
+
+
+
 console.log('\n----- compare a string value 1 to a numeric value 1 -----\n')
 equality('1',1)  
 
@@ -197,12 +212,27 @@ function objects() {
   console.log('objects() to demostrate Javascript objects')
   console.log('-'.repeat(50));
 
-  // Define an object
+  // Define an object - a group of key/value pairs key :value
 
 let contactInfo = {   //define an object called contact
                     firstName: "Frank",
                     lastName : "Fella",
-                    city : "Phoenix"
+                    city : "Phoenix",
+                    favorites: [    // start of array
+                      {  //element in the array
+                        sport: "football",
+                        favoirteTeam: "Packers"
+
+                      },  //marks end of element
+                      {
+                        sport: "hockey",
+                        favoirteTeam: "Chicago Blackhawks"
+                      },
+                      {
+                        sport: "baseball",
+                        favoirteTeam: "New York Yankees"
+                      }
+                    ]  // marks end of array in this object
 }
   // Log the entire  object
   console.log(contactInfo)
