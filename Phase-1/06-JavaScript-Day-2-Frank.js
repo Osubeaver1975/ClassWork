@@ -105,6 +105,14 @@ for(aNumber of numbers) {
 }
 console.log(`The sum is: ${sum} and the average is: ${sum / numbers.length}`)
 
+
+Add(1,2);         // calls the "Add" Func with 2 params
+Add(1,2,3);       // calls "Add" func with 3 prams. This one runs as 
+                  // the 2 params one gets overwritten by the latter call
+
+mathFunctions();
+
+
 stringFunctions("Hello World, welcome to JavaScript");
 stringFunctions("1,2,3,4,5,6,7,8,9");
 stringFunctions('     Programming is fun!      ')
