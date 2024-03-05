@@ -105,6 +105,7 @@ for(aNumber of numbers) {
 }
 console.log(`The sum is: ${sum} and the average is: ${sum / numbers.length}`)
 
+<<<<<<< HEAD
 
 Add(1,2);         // calls the "Add" Func with 2 params
 Add(1,2,3);       // calls "Add" func with 3 prams. This one runs as 
@@ -113,6 +114,15 @@ Add(1,2,3);       // calls "Add" func with 3 prams. This one runs as
 mathFunctions();
 
 
+=======
+console.log('**************** Do we get here *****************')
+
+Add(1,2);   // call the Add function with 2 parameters
+Add(1,2,3); // call the Add function with 3 parameters
+
+mathFunctions();
+
+>>>>>>> b29a1293059656809306783f78ef42adf5e4dc70
 stringFunctions("Hello World, welcome to JavaScript");
 stringFunctions("1,2,3,4,5,6,7,8,9");
 stringFunctions('     Programming is fun!      ')
@@ -280,7 +290,7 @@ function objects() {
   console.log('-'.repeat(50));
 
   // Define an object - a group of key/value pairs key : value
-  let contactInfo  = {  // define an object called contact
+  let contactInfo  = {  // define an object called contactInfo
                       firstName : "Frank",
                       lastName  : "Fella",
                       city: "Phoenix",
@@ -299,7 +309,7 @@ function objects() {
                         }
                       ], // end of the array in this object
                       // Define a method to be used with an object
-                      // a function in a JavaScript object:  function-name : function {}
+                      // a function in a JavaScript object:  function-name : function() {}
                       showNameCity : function() { 
                       // this.  references the current object 
                       return `${this.lastName}, ${this.firstName}, ${this.city}`
@@ -321,7 +331,6 @@ function objects() {
   // call the function in the object & display what it returns
   console.log(contactInfo.showNameCity())  
                                            
-   
   // Log each element of an array in an object
   
   for(let i=0; i < contactInfo.favorites; i++) {
@@ -343,7 +352,7 @@ the earlier ones are overriden/replaced and the most recent one will be used.
 
 function Add(num1, num2) {
   console.log('-'.repeat(50));
-  console.log('Add(num1, num2) functio called')
+  console.log('Add(num1, num2) function called')
   console.log('-'.repeat(50));
   return num1 + num2;
 }
