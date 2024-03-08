@@ -1,13 +1,18 @@
-<!-- Form to receive information about a user -->                            
+<!-- Form to receive information about a user -->      
+<!-- when the "submit" button is clicked  run the method onSubmit() in the component        -->                 
+<!-- ngSubmit represents the "click" event on a button (type='submit')                      -->
   <form  (ngSubmit)="onSubmit()">
     <!-- Ask for user name -->
-    <!-- id="name-used-to-reference-the-control-in-the-html-document"            -->
-    <!-- [(ngModel)]="name-used-by-external-process-to-access-the-data-entered-by-user" -->
-    <!-- an example of an external process is a program or an API                -->
-    <!-- the label tag adds a prompt/word to the control for="id-for-control"    -->
+    <!-- id="name-used-to-reference-the-control-in-the-html-document"                       -->
+    <!-- [(ngModel)]="name-used-by-external-process-to-access-the-data-entered-by-user"     -->
+    <!-- an example of an external process is a program or an API                           -->
+    <!-- the label tag adds a prompt/word to the control for="id-for-control"               -->
     
-    <!-- the div tag allows us to group elements for styling or spacing -->
-    <!-- Each div element starts on a new line by default               -->
+    <!-- the div tag allows us to group elements for styling or spacing                     -->
+    <!-- Each div element starts on a new line by default                                   -->
+    <!-- [(NgModel)] two-way binding the data in the form to the component variable         -->
+    <!-- two-way binding allows data to be shared between web page and component            -->
+    <!-- ngModule ="fname" connect this input control to the fname variable in the component-->
     <div>
         <label for="fnamefield">First Name:</label>
         <input type="text" id="fnamefield" [(ngModel)]="fname" name="fname"/>
