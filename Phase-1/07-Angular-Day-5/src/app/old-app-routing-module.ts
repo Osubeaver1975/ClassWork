@@ -2,14 +2,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SampleFormComponent } from './sample-form/sample-form.component';
-import { StateSealsComponent } from './state-seals/state-seals.component';
-import { HomeComponent }       from './home/home.component';
+import { SampleFormComponent } from './sample-form/sample-form.component'   ;
+import { StateSealsComponent } from './state-seals/state-seals.component'   ;
+import { HomeComponent }       from './home/home.component'                 ;
+import { LearnerlistComponent } from './learnerlist/learnerlist.component'  ;
 const routes: Routes = [
- { path: '', redirectTo: '/home', pathMatch: 'full' },
- { path: 'home', component: HomeComponent },
- { path: 'persinfo', component: SampleFormComponent },
- { path: 'stateseals', component: StateSealsComponent },
+ { path: '', redirectTo: '/home', pathMatch: 'full' }       ,
+ { path: 'home', component: HomeComponent }                 ,
+ { path: 'learners', component: LearnerlistComponent }      ,
+ { path: 'persinfo', component: SampleFormComponent }       ,
+ { path: 'stateseals', component: StateSealsComponent }     ,
 ];
 
 @NgModule({
