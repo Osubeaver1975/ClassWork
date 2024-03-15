@@ -1,0 +1,45 @@
+Cucumber is End 2 end e2e
+Cucumber helps check engineers and clients point of view
+written in plain englis
+creates communication between technical and non-tech teams
+
+
+Cucumber Behavior Driven Development DFF 
+        Given -paymen module - proper auth 
+
+
+
+        When
+                Pay when I have enough money in bank
+                company's payent interface is up
+                transact one-time pass auth 
+                 press pay button
+
+
+
+
+        Then
+                amoun must be transacted
+                event is recorded in log file
+
+
+Charicterisitcs of Behavior driven Development BDD
+        Reduces cost 
+
+
+
+
+Cucumber Feature File (IMPORTANT)
+        critical in producing a file that will pass all automation tests
+        standard file suitible for all automation testin 
+
+
+Gherkin language
+            Terms used 
+                Feature
+                Given
+                When
+                Then
+                But
+                And
+                Scenario Outline

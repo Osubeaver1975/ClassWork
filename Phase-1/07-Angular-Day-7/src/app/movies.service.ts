@@ -27,6 +27,7 @@ export class MoviesService {
   // Source of data for calls to retrieve the data - initialized in the code
   private listOfMovies : MoviesInfo[] = []  // An array of MovieInfo objects
 
+  //  these variables keep track if we should sort in ascending order or not
   private titleSortAsc    : boolean = true;
   private dateSortAsc     : boolean = true;
   private directorSortAsc : boolean = true;
@@ -60,16 +61,42 @@ export class MoviesService {
      sortByTitle() { 
         this.titleSortAsc ? this.listOfMovies.sort(this.compareTitleAsc)
                           : this.listOfMovies.sort(this.compareTitleDesc)
-
-        this.titleSortAsc = !this.titleSortAsc                  
+          // the "!" is the symbol for "NOT"
+        this.titleSortAsc = !this.titleSortAsc    // reverse the sort ascending variable              
      }
  
   // Sort List of movies by director
+  // .sort() method will sort an array
+  // i will walk thru the array multiple times comparing two elements
+  // it requires a callback method to tell how the two elements relate (GT, EQ, LT)
+  // a compare function" or "comparitor" to tell how elements relate
+  // the compare function returns 0 if they are =  or less than zero if first is 
+  //        less than second, greater than 0 if first is larger than second
+  //
+  // NOTE: Use of the conditional operator ?
+  //
+  //      Contitional operator is a shorthand for if-else
+  //      
+  //      condition ? process -if-true : process -if-false
+  //
+  //      primary use is to allow conditional processing when an if-else cannot be coded
+  //      ie. when conditional parameters are required by a method
+
+  //
+  // in the example below:
+  //
+  //       if this.directorSortAsc === true{
+  //                                         this.listOfMovies.sort(this.compareDirectorAsc)
+  //      else {
+  //            this.listOfMovies.sort(this.compareDirectorDesc)
+  //      }
+  //    }
+  
     sortByDirector() { 
         this.directorSortAsc ? this.listOfMovies.sort(this.compareDirectorAsc)
                              : this.listOfMovies.sort(this.compareDirectorDesc);
 
-        this.directorSortAsc = !this.directorSortAsc;                     
+        this.directorSortAsc = !this.directorSortAsc; // reverse the sort ascending variable                     
   }
 
     // Sort List of movies by director
@@ -79,17 +106,18 @@ export class MoviesService {
 
         this.dateSortAsc = !this.dateSortAsc                 
 } 
-
+// this is a compare function used to sort the movies
+// it receives two modiesInfo objects
      compareTitleAsc(a : MoviesInfo, b : MoviesInfo) {
-        if (a.title < b.title) return -1;
-        if (a.title > b.title) return 1;
-        return 0;
+        if (a.title < b.title) return -1; // first is < second --> rerurn a - Negative value
+        if (a.title > b.title) return 1;  // first is > second --> rerurn a + Positive value
+        return 0;                         // otherwise 0 since they are equal
     }  
 
     compareTitleDesc(a : MoviesInfo, b : MoviesInfo) {
-      if (a.title > b.title) return -1;
-      if (a.title < b.title) return 1;
-      return 0;
+      if (a.title > b.title) return -1;   // first is greater than second --> rerurn a - negative value
+      if (a.title < b.title) return 1;    // first is less than second --> return a + positive value
+      return 0;                           // otherwise return 0 since they are equal
   }  
 
     compareReleaseYearAsc(a : MoviesInfo, b : MoviesInfo) {
@@ -97,12 +125,15 @@ export class MoviesService {
       if (a.releaseYear > b.releaseYear) return 1;
       return 0;
     }  
+        // Alternate code: return a-b // if a> b result is positive, if < b result is negative
 
     compareReleaseYearDesc(a : MoviesInfo, b : MoviesInfo) {
       if (a.releaseYear > b.releaseYear) return -1;
       if (a.releaseYear < b.releaseYear) return 1;
       return 0;
-    } 
+            // Alternate code: return b-a // if b > a result is positive, if < a result is negative
+    }
+     
 
     compareDirectorAsc(a : MoviesInfo, b : MoviesInfo) {
       if (a.director < b.director) return -1;
