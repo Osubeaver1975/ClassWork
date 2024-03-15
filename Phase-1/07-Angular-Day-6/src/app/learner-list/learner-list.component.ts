@@ -19,6 +19,6 @@ export class LearnerListComponent {
 
   // public says the data is accessible by anyone with access to module
   // private says the data is accesible only by methods in teh component
-  public learnerNames = ["Bertam", "Elana", "Guillermo", "Jakob", "Kris"]
+  public learnerNames = ["Bertram", "Elena", "Guillermo", "Jakob", "Kris"]
 
 }

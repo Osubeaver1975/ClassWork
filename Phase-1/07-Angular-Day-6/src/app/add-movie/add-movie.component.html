@@ -1,3 +1,7 @@
+<!-- [ngModel] specifies angular two-way binding-->
+<!-- (ngSubmit) = run the method specified when the form is submitted-->
+<!--    so here when submit is clicked we run the addMovie method for this component-->
+<!--        with the newMovie object that was filled in by the user -->
 <form  id="theForm" (ngSubmit)="addMovie(newMovie)">
     <div>
         <label for="movieNameFeld">Movie Name:</label>
