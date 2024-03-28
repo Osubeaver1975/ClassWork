@@ -1,5 +1,7 @@
 // Same comments syntax as JavaScript
 
+// all statements in Java require a semicolon at the end 
+
 // Everything in Java is part of a "package"
 // A package is a group of related Java entities/elements/things/stuff
 package com.frank;
@@ -102,12 +104,16 @@ public class SampleJavaProject {
  **************************************************************************************************/
         displaySectionHeader("Keyboard input demo", true);
         
+        // Define object to represent the keyboard - Java defines System.in to represent keyboard in(put)
+        // class object-name = new class(params)
+        
         Scanner theKeyboard = new Scanner(System.in);
         
-        String aLine;
+        String aLine;    // hold a line of keyboard input returned from our Scanner object
         
         System.out.println("Please enter your name: ");
-        String userName = theKeyboard.nextLine();
+        					// object.method()
+        String userName = theKeyboard.nextLine();  // ask the scanner object to get then next line from keyboard
         
         System.out.println("Hello, " + userName + " nice to meet you!\n");
         
