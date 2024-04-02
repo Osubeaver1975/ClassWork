@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+<<<<<<< HEAD:Phase-2-Backend-Java-and-Database-Development/01-Day-1-SampleJavaProject/target/classes/META-INF/maven/SampleJavaProject/SampleJavaProject-Day-2/pom.xml
+    <artifactId>SampleJavaProject-Day-2</artifactId>
+=======
+    <artifactId>01-Day-1-SampleJavaProject</artifactId>
+>>>>>>> 8a921ab085c66a86100f0895ca548adc26ed2a38:Phase-2-Backend-Java-and-Database-Development/01-Day-1-SampleJavaProject/target/classes/META-INF/maven/SampleJavaProject/01-Day-1-SampleJavaProject/pom.xml
+
+    <groupId>SampleJavaProject</groupId>
+
+    <packaging>jar</packaging>
+
+    <properties></properties>
+
+    <version>0.0.1-SNAPSHOT</version>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencies></dependencies>
+
+</project>
