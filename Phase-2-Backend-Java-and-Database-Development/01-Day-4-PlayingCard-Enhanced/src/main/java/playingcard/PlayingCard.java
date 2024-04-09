@@ -30,6 +30,7 @@ public class PlayingCard {
 	};
 
 	public static enum CardValue {  // Using the fact that enums are really integers inside value to name our values
+//really  	0,   1,   2,     3,    4,    5,   6,     7,     8,    9,  10,   11,    12,   13	
 		JOKER, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
 	};
 
@@ -38,6 +39,10 @@ public class PlayingCard {
 	 *
 	 * 
 	 * static so it can be referenced using the class name. ie. no object required
+	 * 
+	 * 
+	 * 
+	 *  final identifies this as a constant - value cannot be changed once assigned! ! ! 
 	 ***************************************************************************************************/
 	
 	private static final CardValue DEFAULTCARDVALUE = CardValue.JOKER;   // enum data-type for value
@@ -195,6 +200,17 @@ public class PlayingCard {
 
 	/***************************************************************************************************
 	 * Object super class overrides
+	 * We need to override (replace) the generic methods to process our specific class the way we want it to be processed
+	 * 
+	 * Typically a class will provide overrides to:
+	 * 
+	 * .toString() - return an object of the class as a String instead of package.class@location
+	 * 
+	 * . equals() - return where two class objects are equal
+	 * 
+	 * .hashCode() - return a unique value based on content of an objectr rather thant the locations
+	 * 				. hashCode() is in several situations by Java -you usually don't know it is used in certain instances. Java will use .hashCode() to determine equality
+	 * MOST IDEs will generate these classes for u
 	 ***************************************************************************************************/
 @Override   // Ask compiler to assure this is a valid super class override
 

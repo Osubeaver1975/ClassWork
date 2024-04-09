@@ -1,3 +1,4 @@
+
 package com.frank;
 
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ public class TestCardApp {
     	
     	/*************************************************************************************
     	 * Instantiate and display some PlayingCard objects
+    	 * 
+    	 *  To Instantiat an object of class: new constructorName9parameters)
     	 ************************************************************************************/
     	
     	displayMessage("\nInstantiating a default Playing Card called aCard: new PlayingCard()\n", true);
@@ -52,6 +55,7 @@ public class TestCardApp {
     	
     	displayMessage("\nInstantiating a 2 of Hearts called someCard: new PlayingCard(2, PlayingCard.CardSuit.HEART)\n", true);
     	
+    	// Note: us of int and PlayingCard suit enum
     	PlayingCard someCard = new PlayingCard(2, PlayingCard.CardSuit.HEART);
     	System.out.print("someCard: \t" + someCard);
      	  
