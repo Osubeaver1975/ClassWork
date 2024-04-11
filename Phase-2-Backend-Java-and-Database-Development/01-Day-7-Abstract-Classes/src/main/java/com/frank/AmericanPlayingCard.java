@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class AmericanPlayingCard extends PlayingCard{
-	
+	// "final" makes it a constant 
 	private static final int    DEFAULTCARDVALUE = 0;
 	private static final String DEFAULTCOLOR     = "BLACK";
 	private static final String DEFAULTSUIT      = "Joker";

@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UsePlayingCards {
+	
+	// Instantiat an instance of the super class
+	// 			as long as it is not abstract
+	
+	//PlayingCard aPlayingCard = newPlayingCard(6, "DIAMONDS", "RED");
 
 	public static void main(String[] args) {
 		AmericanPlayingCard aUSACard  = new AmericanPlayingCard(1, "HEARTS");

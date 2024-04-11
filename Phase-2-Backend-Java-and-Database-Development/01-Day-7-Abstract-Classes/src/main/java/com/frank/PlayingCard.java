@@ -1,5 +1,14 @@
 package com.frank;
 
+/************************************************************************
+ * Define a generic Playing Card as an Abstract class
+ * 
+ * An Abstract class provides basic/generic attributes and processing
+ * 
+ * It cannot be instantiated. Not its own object
+ * 
+ * Abstract classes are meant to be a SUPERCLASS 
+ ***********************************************************************/
 public class PlayingCard {
 	
 	private int value;    
