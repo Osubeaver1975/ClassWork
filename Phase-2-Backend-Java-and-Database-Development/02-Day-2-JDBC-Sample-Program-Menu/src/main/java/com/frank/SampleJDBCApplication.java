@@ -18,19 +18,6 @@ import com.frank.model.Gambler.JdbcGamblerDao;
  * 
  * Demonstrate use of JDBC DAOs to access data in a relational data base (mySql in this example)
  *
- 	 				updateSalary = true;
-	 				System.out.println("Enter new monthly salary for Gambler or press enter to keep \"" + gamblerToUpdate.getMonthlySalary() +  "\"");
-	 				String  newSalary = theKeyboard.nextLine();
-	 				if(newSalary.equals("")) {
-	 					updateSalary = false;
- 						continue;
- 					}
-	 			
- 					Double validSalary = validateSalary(newSalary);
- 					if (validSalary != null) {
- 						gamblerToUpdate.setMonthlySalary(validSalary);
- 						updateSalary = false;
- 					}
  				
  */
 public class SampleJDBCApplication {
@@ -52,7 +39,6 @@ public class SampleJDBCApplication {
     /**************************************************************************************************************
      * Constructor for the application code
      *************************************************************************************************************/
-
 	public SampleJDBCApplication() {
 		
 	// Instantiate a Scanner object for the keyboard and assign to reference
@@ -64,27 +50,37 @@ public class SampleJDBCApplication {
  	// Instantiate a DC DAO object object to represent a DAO we will be using	
  		theGamblerData = new JdbcGamblerDao(vegasDataSource);
 	}
-	
+	/************************************************************
+	 * This is the method that runs and controls the application
+	 * 
+	 * It should be called from the main() method for the project
+	 ************************************************************/
 
     public void run() {
     	
         System.out.println( "------ Start of SampleJDBCApplication ------\n" );
         
+        // Process loop control variable
         boolean continueProcessing = true;
         
+        // keep processing while the loop control variable is "true"
         while(continueProcessing) {
  
+        	// Display the menu to user to get their choice of options
+        	// The method called returns the option chosen
+        	//        and we store it in menuOptionChosen variable
  		String menuOptionChosen = displayMenuAndReceiveOption();
  		
+ 		// Check the option chosen by the user and run the associated method
  		switch(menuOptionChosen) {
  		
- 			case "X": {
- 				continueProcessing = false;
-				break;
+ 			case "X": {						// If they choose to exit...
+ 				continueProcessing = false; //     ...set loop control variable to end
+				break;						// exit the switch statement
  			}
- 	 		case "1": {
- 				getAndDisplayAllGamblersFromTheDataBase();
- 				break;
+ 	 		case "1": {						// If the choose to display all gamblers
+ 				getAndDisplayAllGamblersFromTheDataBase(); 	// run the method to do that
+ 				break;										// exit the switch statement
 	 		}
 	 		case "2": {
 	 			getAGamblerBasedOnTheirId();
@@ -160,6 +156,7 @@ public class SampleJDBCApplication {
     		
     		System.out.print("\nPlease choose an option: ");
     		
+    		// ONLY the first character of what the user enters is returned
     		optionChosen = theKeyboard.nextLine().toUpperCase().substring(0,1);
     		
     		return optionChosen;
