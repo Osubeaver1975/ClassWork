@@ -6,6 +6,15 @@ import java.util.List;
 
 // Identify the C.R.U.D.  (and any other methods) required to access the data
 
+// Define the operations required if one impliments this interface
+
+// Interface contgains method signatures of the methods required
+
+// A method signature: access return-type methodName(parameters);
+//
+//    the method signatures in an interface do not have any code nor
+
+
 public interface CasinoDao {
 	
 	// Get all casinos
