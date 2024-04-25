@@ -526,7 +526,8 @@ public class SampleJDBCApplication {
 		// Display the casino we got from the DAO
 		System.out.println(theCasino);
 	};
-	
+	// Because the code in this method may cause a DataBaseInsertionException
+	//    ... We need to tell Java we know that by adding a throws on the method header
 	private void addACasino() throws DataBaseInsertException {
 		
 		Casino casino2BeAdded = new Casino();
@@ -556,16 +557,23 @@ public class SampleJDBCApplication {
 	
 	
 	private void updateACasino() throws DataBaseUpdateException {
+		// Get values for the primary key(s) of the table so a row can be retrieved
 		System.out.print("Please enter the name of the Casino you would like to update: ");	
 		String nameOfCasino2BeUpdated = theKeyboard.nextLine();
-	
+		
+		// Get the existing values for the data to be updated
 		Casino casino2BeUpdated = theCasinoData.getCasinoByName(nameOfCasino2BeUpdated);
 		
+		
+		// Did we find an existing row in the table
 		if(casino2BeUpdated == null) {
 			System.out.println("!!!!! Casino with name \"" + nameOfCasino2BeUpdated + "\" not found !!!!!");
 		    return;
 		}
 		
+		// Ask for new values for all columns except the primary keys
+		// The relational model database prohibits the updating of primary keys
+		// Relationsal model says: insert row with a new primary key and data and delete old one
 		System.out.println("Enter new location or press enter to keep \"" + casino2BeUpdated.getLocation() + "\"");
 		String newLocation = theKeyboard.nextLine();
 		
@@ -599,6 +607,7 @@ public class SampleJDBCApplication {
 				System.out.println("!!!!! Please try again      !!!!!\n");
 			}
 		} while(!validSizeEntered);
+		// Once we have any new data for the update - call the DAO method to do the update
 		try {
 			theCasinoData.updateCasino(casino2BeUpdated);
 		}

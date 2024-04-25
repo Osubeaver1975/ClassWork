@@ -36,6 +36,7 @@ public class JdbcGamblerDao implements GamblerDao {
 	// define a reference to the JdbcTemplate object we will use to access Spring DAO Framework
 	private JdbcTemplate theDataBase;
 
+	// Define a reference to a DatabaseErrorLog object
 	private DataBaseErrorLog theDatabaseErrorLog;
 
 	// constructor for the class which takes the dataSource as a parameter
@@ -43,7 +44,8 @@ public class JdbcGamblerDao implements GamblerDao {
 	public JdbcGamblerDao(DataSource dataSource) throws IOException {
 		// Instantiate a JdbcTemplate object with the dataSource give and assign it to our reference
 		this.theDataBase = new JdbcTemplate(dataSource);
-		this.theDatabaseErrorLog = new DataBaseErrorLog("database");
+		// Instantiate a DatabaseErrorLog Obj and assign it to the reference
+		this.theDatabaseErrorLog = new DataBaseErrorLog("database"); // Use "database" as the error log prefix
 	}
 
 
@@ -56,7 +58,7 @@ public class JdbcGamblerDao implements GamblerDao {
 		List<Gambler> allGamblers = new ArrayList();
 		
 		// Define a String with the SQL to access the data base
-		String selectAllGamblersSql = "select id from gambler";
+		String selectAllGamblersSql = "select * from gambler";
 		
 		// Send the SQL string to the database using jdbcTemplate methods
 		// for a select - store the result in an SqlRowSet object
@@ -233,8 +235,11 @@ public class JdbcGamblerDao implements GamblerDao {
 			aGambler.setName(aRow.getString("gambler_name"));
 			aGambler.setMonthlySalary(aRow.getDouble("monthly_salary"));
 		}
+		// Spring JDBC rolls all SQL Exceptions into the DataAccessException
 		catch (DataAccessException exceptionInfo) {
+			// Notify the user there was an error
 			System.out.println("!!!!! Data base error !!!!!" );
+			// Log the details of the error on the error log - pass Exception obj to the logger
 			theDatabaseErrorLog.writeExceptionInfoToDatabaseErrorLog(exceptionInfo);
 		}
         // Send the completed POJO back to where this method was called
