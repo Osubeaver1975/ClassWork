@@ -1,4 +1,4 @@
-package servletexample;
+package myservlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,17 +9,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Servlet implementation class ServletExample
+ * Servlet implementation class HelloServlet
  */
-@WebServlet("/myservlet")
-
-public class ServletExample extends HttpServlet {
+@WebServlet("/helloServlet")
+public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public ServletExample() {
+    public HelloServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -27,15 +27,13 @@ public class ServletExample extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		response.setContentType("text/html"); 
-         
-        PrintWriter out = response.getWriter(); 
-          
-        out.print("<html><body>"); 
-        out.print("<h2>Welcome to Your First Servlet Application</h2>"); 
-        out.print("</body></html>"); 
-	
+		// TODO Auto-generated method stub
+		String theName = request.getParameter("theName");
+		
+		PrintWriter htmlWriter =response.getWriter();
+		
+		htmlWriter.println("Hello " + theName);
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
