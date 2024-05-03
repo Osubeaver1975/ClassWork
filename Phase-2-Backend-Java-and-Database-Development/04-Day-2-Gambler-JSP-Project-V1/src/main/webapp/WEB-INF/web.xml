@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
-<<<<<<< HEAD:Phase-2-Backend-Java-and-Database-Development/04-JSPs/src/main/webapp/WEB-INF/web.xml
-  <display-name>04-JSP-Example</display-name>
-=======
   <display-name>04-Day-2-Gambler-JSP-Project-V1</display-name>
->>>>>>> c1d55bf20e51d00b74c35241477342a12749cec8:Phase-2-Backend-Java-and-Database-Development/04-Day-2-Gambler-JSP-Project-V1/src/main/webapp/WEB-INF/web.xml
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.jsp</welcome-file>
@@ -13,17 +9,4 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
-<<<<<<< HEAD:Phase-2-Backend-Java-and-Database-Development/04-JSPs/src/main/webapp/WEB-INF/web.xml
-  <servlet>
-    <description></description>
-    <display-name>HelloServlet</display-name>
-    <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>myservlets.HelloServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>HelloServlet</servlet-name>
-    <url-pattern>/HelloServlet</url-pattern>
-  </servlet-mapping>
-=======
->>>>>>> c1d55bf20e51d00b74c35241477342a12749cec8:Phase-2-Backend-Java-and-Database-Development/04-Day-2-Gambler-JSP-Project-V1/src/main/webapp/WEB-INF/web.xml
 </web-app>

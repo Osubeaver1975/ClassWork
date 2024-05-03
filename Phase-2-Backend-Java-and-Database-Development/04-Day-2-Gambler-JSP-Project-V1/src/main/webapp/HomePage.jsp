@@ -5,6 +5,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Gambler App Home Page</title>
+<!--  the CSS styling is in this file - path is relative to the "webapp" folder -->
+<!--  this file is stored in webapp/resources folder (./resources -->
 <link rel="stylesheet" href="./resources/style.css"></link>
 </head>
 <body>
@@ -15,6 +17,13 @@
 </div>
 
 <div class="options">
+<!--  note: action= on the form tells it what path to give to the browser  -->
+<!--  ./gambler is the url path assigned to GamblerServlet -->
+<!--  when the user enters input the GamblerServlet is run -->
+<!--  the name of input variable is added to the URL path as a query param -->
+<!--  the method= tells the server which servlet method to run -->
+<!--  		method="get" indicates doGet() method in servlet should run -->
+<!--  		method="post/put/delete" indicates doPost/doPut/doDelete should run -->
 	<form action="./gambler" method="get">
 		Display Gambler with id: <input type="text" size=5 name="id">
 	</form>
