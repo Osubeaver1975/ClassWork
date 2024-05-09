@@ -155,8 +155,10 @@ public class MemoryGamblerDao implements GamblerDao {
 			throw new DataBaseUpdateException("Error updating data base; Please review the Data Base Error Log: "
 					                         + theDatabaseErrorLog.getErrorLogFileName());
 		}
-		// Add updated Gambler to the data base
-		theDataBase.add(gamblerPassed);	
+	// We know the Gambler to be deleted is in the data source
+	// So now let's remove them
+	// Since our data source is an ArrayList we need to know the index of the Gambler to delete them
+		theDataBase.remove(existingGambler);	
 	}
 
 	@Override
