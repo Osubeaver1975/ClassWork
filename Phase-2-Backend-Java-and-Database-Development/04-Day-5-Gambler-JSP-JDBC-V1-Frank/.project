@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD:Phase-2-Backend-Java-and-Database-Development/.project
 <<<<<<< HEAD:Phase-2-Backend-Java-and-Database-Development/04-JSPs/.project
 	<name>04-JSP-Example</name>
 =======
 	<name>04-Day-2-Gambler-JSP-Project-V1</name>
 >>>>>>> c1d55bf20e51d00b74c35241477342a12749cec8:Phase-2-Backend-Java-and-Database-Development/.project
+=======
+	<name>04-Day-5-Gambler-JSP-JDBC-V1</name>
+>>>>>>> 6b5db09ab94d7d3cab3d73073e32fccac9452b29:Phase-2-Backend-Java-and-Database-Development/04-Day-5-Gambler-JSP-JDBC-V1-Frank/.project
 	<comment></comment>
 	<projects>
 	</projects>
