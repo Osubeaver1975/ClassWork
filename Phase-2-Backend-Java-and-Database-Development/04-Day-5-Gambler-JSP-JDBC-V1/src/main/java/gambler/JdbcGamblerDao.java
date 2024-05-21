@@ -33,7 +33,8 @@ import javax.sql.DataSource;
 //import org.apache.commons.dbcp2.BasicDataSource;
 //import org.springframework.dao.DataAccessException;
 //import org.springframework.jdbc.core.JdbcTemplate;
-//import org.springframework.jdbc.support.rowset.SqlRowSet;
+//-A
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 public class JdbcGamblerDao implements GamblerDao {
 	
